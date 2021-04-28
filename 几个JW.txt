@@ -1,0 +1,6 @@
+JWS：Signed JWT签名过的jwt
+JWE：Encrypted JWT部分payload经过加密的jwt；目前加密payload的操作不是很普及；
+JWK：JWT的密钥，也就是我们常说的 scret；
+JWKset：JWT key set在非对称加密中，需要的是密钥对而非单独的密钥，在后文中会阐释；
+JWA：当前JWT所用到的密码学算法；
+nonsecure JWT：当头部的签名算法被设定为none的时候，该JWT是不安全的；因为签名的部分空缺，所有人都可以修改。

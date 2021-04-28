@@ -1,0 +1,29 @@
+plugins {
+    id 'java'
+}
+
+version 'unspecified'
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+    implementation "org.springframework.security.oauth.boot:spring-security-oauth2-autoconfigure:2.2.13.RELEASE"
+    implementation 'org.springframework.boot:spring-boot-configuration-processor'
+
+    implementation 'javax.xml.bind:jaxb-api'
+    implementation 'com.sun.xml.bind:jaxb-core:3.0.0'
+    implementation 'com.sun.xml.bind:jaxb-impl:3.0.0'
+    implementation 'com.nimbusds:nimbus-jose-jwt:9.8.1'
+    testCompile 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+}
+
+test {
+    useJUnitPlatform()
+}

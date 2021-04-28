@@ -1,0 +1,39 @@
+= OAuth 2.0 Authorization Server Sample
+
+此示例演示了一个支持简单静态JWK集的授权服务器。
+
+它对于处理库中要指向授权服务器的其他示例非常有用.
+
+== 1. Running the server
+
+To run the server, do:
+
+```bash
+./gradlew bootRun
+```
+
+Or import the project into your IDE and run `OAuth2AuthorizationServerApplication` from there.
+
+Once it is up, this request asks for a token with the "message:read" scope:
+
+```bash
+curl reader:secret@localhost:8081/oauth/token -d grant_type=password -d username=subject -d password=password
+```
+
+Which will respond with something like:
+
+```json
+{
+    "access_token":"eyJhbGciOiJSUzI1NiIsI...Fhq4RIVyA4ZAkC7T1aZbKAQ",
+    "token_type":"bearer",
+    "expires_in":599999999,
+    "scope":"message:read",
+    "jti":"8a425df7-f4c9-4ca4-be12-0136c3015da0"
+}
+```
+
+You can also do the same with the `writer` client:
+
+```bash
+curl writer:secret@localhost:8081/oauth/token -d grant_type=password -d username=subject -d password=password
+```

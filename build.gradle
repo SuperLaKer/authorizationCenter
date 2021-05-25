@@ -1,6 +1,6 @@
 plugins {
     id 'io.spring.nohttp' version '0.0.5.RELEASE'
-    id 'org.springframework.boot' version '2.2.13.RELEASE'
+    id 'org.springframework.boot' version '2.2.5.RELEASE'
     id 'io.spring.dependency-management' version '1.0.11.RELEASE' apply(false)
     id 'java'
 }
@@ -17,6 +17,7 @@ configure(allprojects) { project ->
     }
     dependencyManagement {
         dependencies {
+
             'org.projectlombok:lombok:1.18.20'
         }
     }

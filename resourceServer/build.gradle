@@ -17,7 +17,7 @@ dependencies {
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
 
     // TokenStore
-    implementation "org.springframework.security.oauth.boot:spring-security-oauth2-autoconfigure:2.2.13.RELEASE"
+    implementation "org.springframework.security.oauth.boot:spring-security-oauth2-autoconfigure:2.2.5.RELEASE"
     // implementation 'com.nimbusds:nimbus-jose-jwt:9.4'
 }
 

@@ -6,13 +6,13 @@
       <profile name="Gradle Imported" enabled="true">
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="false">
-          <entry name="$GRADLE_USER_HOME$/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.16/6dc192c7f93ec1853f70d59d8a6dcf94eb42866/lombok-1.18.16.jar" />
+          <entry name="$GRADLE_USER_HOME$/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.12/48e4e5d60309ebd833bc528dcf77668eab3cd72c/lombok-1.18.12.jar" />
         </processorPath>
-        <module name="gradleParentProject.authorizationServer.main" />
-        <module name="gradleParentProject.resourceServerJwe.main" />
-        <module name="gradleParentProject.resourceServerStatic.main" />
-        <module name="gradleParentProject.main" />
-        <module name="gradleParentProject.resourceServer.main" />
+        <module name="authorizationCenter.resourceServerJwe.main" />
+        <module name="authorizationCenter.authorizationServer.main" />
+        <module name="authorizationCenter.resourceServer.main" />
+        <module name="authorizationCenter.resourceServerStatic.main" />
+        <module name="authorizationCenter.main" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8" />

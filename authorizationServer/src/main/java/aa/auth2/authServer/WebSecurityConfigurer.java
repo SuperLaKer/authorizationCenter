@@ -2,6 +2,7 @@ package aa.auth2.authServer;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
 /**
@@ -20,5 +21,10 @@ public class WebSecurityConfigurer extends WebSecurityConfigurerAdapter {
                 .httpBasic()
                 .and()
                 .csrf().ignoringRequestMatchers((request) -> "/introspect".equals(request.getRequestURI()));
+    }
+
+    @Override
+    public void configure(WebSecurity web) throws Exception {
+        web.ignoring().antMatchers("/userlogin","/userlogout","/userjwt");
     }
 }

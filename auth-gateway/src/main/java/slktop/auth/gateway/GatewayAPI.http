@@ -1,0 +1,11 @@
+
+
+###
+### 测试服务是否可用
+GET http://localhost:40000/config/get
+###
+GET http://localhost:20000/
+
+
+###
+GET http://localhost:20000/provider/afterGateway

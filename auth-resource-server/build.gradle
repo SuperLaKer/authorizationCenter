@@ -1,0 +1,16 @@
+plugins {
+    id 'java'
+}
+
+group 'slktop.auth'
+version 'v1'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    annotationProcessor "org.springframework.boot:spring-boot-configuration-processor"
+    implementation 'com.nimbusds:nimbus-jose-jwt:9.4'
+    compile 'org.springframework.cloud:spring-cloud-starter-oauth2'
+}

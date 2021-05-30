@@ -24,7 +24,7 @@ import java.util.stream.Collectors;
  *
  * This class adds ad-hoc support in order to better support the other samples in the repo.
  */
-@FrameworkEndpoint
+//@FrameworkEndpoint
 public class FrameworkEndpoints {
 
     @Autowired

@@ -1,0 +1,26 @@
+用户·中心：
+    管理账户名称、密码、余额等
+
+认证·中心：
+
+    暴露controller给前端：
+        访问登陆接口(username, password, clientId, clientPassword)
+
+    转发：
+        1、拉取认证中心服务高可用列表
+        2、拼装basic认证，header, body(username, password, grant_type)
+        3、post(/oauth/token)+header+body。
+        4、认证中心校验用户密码(拉取用户中心实例，获取用户数据)
+
+
+资源·服务器：
+    不能直接访问资源服务器，必须通过网关
+
+
+网关·gateway：
+
+    1、前端访问资源服务器:  网关IP:网关PORT/资源服务器名字一一对应的url
+    2、网关拦截请求，获取cookie中的jti, 通过jti作为key获取redis中的jwt完成token
+    3、判断是否存在jwtToken
+    4、不存在返回前端需要登陆的信息
+        存在：携带完整的jwtToken访问资源服务器

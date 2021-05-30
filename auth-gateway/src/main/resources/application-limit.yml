@@ -1,0 +1,33 @@
+spring:
+  cloud:
+    gateway:
+#      discovery:
+#        locator:
+#          enabled: true
+      globalcors:
+        cors-configurations:
+          '[/**]': # 匹配所有请求
+            allowedOrigins: "*" #跨域处理 允许所有的域
+            allowedMethods: # 支持的方法
+              - GET
+              - POST
+              - PUT
+              - DELETE
+      routes:
+        - id: go_to_provider_01
+          predicates:
+            - Path=/**
+          uri: lb://provider01
+          filters:
+            # 网关自动添加前缀/api
+            # - PrefixPath=/config/get
+
+            # 请求数限流 名字不能随便写
+            - name: RequestRateLimiter
+              args:
+                # 令牌桶总容量
+                redis-rate-limiter.burstCapacity: 10
+                # 令牌桶每秒填充平均速率
+                redis-rate-limiter.replenishRate: 10
+                # 用于限流的键的解析器的 Bean 对象的名字。它使用 SpEL 表达式根据#{@beanName}从 Spring 容器中获取 Bean 对象。
+                key-resolver: "#{@keyResolver}"

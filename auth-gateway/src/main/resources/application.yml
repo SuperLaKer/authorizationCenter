@@ -1,0 +1,19 @@
+spring:
+  cloud:
+    gateway:
+      globalcors:
+        cors-configurations:
+          '[/**]': # 匹配所有请求
+            allowedOrigins: "*" #跨域处理 允许所有的域
+            allowedMethods: # 支持的方法
+              - GET
+              - POST
+              - PUT
+              - DELETE
+      routes:
+        - id: authCenter
+          predicates:
+            - Path=/auth
+            - Method=GET,POST,DELETE,PUT
+          # loadBalance 服务名
+          uri: lb://authCenter

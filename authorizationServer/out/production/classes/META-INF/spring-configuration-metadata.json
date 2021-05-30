@@ -1,0 +1,42 @@
+{
+  "groups": [
+    {
+      "name": "free.attributes",
+      "type": "aa.auth2.authServer.FreeAttributes",
+      "sourceType": "aa.auth2.authServer.FreeAttributes"
+    }
+  ],
+  "properties": [
+    {
+      "name": "free.attributes.jwt-enable",
+      "type": "java.lang.Boolean",
+      "sourceType": "aa.auth2.authServer.FreeAttributes",
+      "defaultValue": true
+    },
+    {
+      "name": "free.attributes.key-store",
+      "type": "java.lang.String",
+      "sourceType": "aa.auth2.authServer.FreeAttributes",
+      "defaultValue": "slkSecretKey.store"
+    },
+    {
+      "name": "free.attributes.key-store-alias",
+      "type": "java.lang.String",
+      "sourceType": "aa.auth2.authServer.FreeAttributes",
+      "defaultValue": "slkSecretKeyStore"
+    },
+    {
+      "name": "free.attributes.key-store-password",
+      "type": "java.lang.String",
+      "sourceType": "aa.auth2.authServer.FreeAttributes",
+      "defaultValue": "slkroot"
+    },
+    {
+      "name": "free.attributes.secret-key-password",
+      "type": "java.lang.String",
+      "sourceType": "aa.auth2.authServer.FreeAttributes",
+      "defaultValue": "slkroot"
+    }
+  ],
+  "hints": []
+}

@@ -1,0 +1,37 @@
+spring:
+  cloud:
+    gateway:
+      globalcors:
+        cors-configurations:
+          '[/**]': # 匹配所有请求
+            allowedOrigins: "*" #跨域处理 允许所有的域
+            allowedMethods: # 支持的方法
+              - GET
+              - POST
+              - PUT
+              - DELETE
+      routes:
+        # id唯一标识
+        - id: go_to_baidu
+          # predicates 规则
+          predicates:
+            # - Host=www.slk.com
+            # /baidu开头的全部路由到www.baidu.com
+            - Path=/baidu/**
+            - Method=GET,POST
+            # 符合的规则 路由到哪里
+          uri: https://www.baidu.com
+
+          # 网关自动：去除前缀
+          filters:
+            # 去掉第一个/xx, 将会把/baidu去掉
+            - StripPrefix= 1
+            # 网关自动添加前缀/api
+            # - PrefixPath=/api
+
+        - id: authCenter
+          predicates:
+            - Path=/auth
+            - Method=GET,POST
+          # loadBalance 服务名
+          uri: lb://authCenter

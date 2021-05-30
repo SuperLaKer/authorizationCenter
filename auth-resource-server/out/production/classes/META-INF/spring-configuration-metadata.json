@@ -1,0 +1,42 @@
+{
+  "groups": [
+    {
+      "name": "free.attributes",
+      "type": "slktop.auth.resource.config.FreeAttributes",
+      "sourceType": "slktop.auth.resource.config.FreeAttributes"
+    }
+  ],
+  "properties": [
+    {
+      "name": "free.attributes.jwt-enable",
+      "type": "java.lang.Boolean",
+      "sourceType": "slktop.auth.resource.config.FreeAttributes",
+      "defaultValue": true
+    },
+    {
+      "name": "free.attributes.key-store",
+      "type": "java.lang.String",
+      "sourceType": "slktop.auth.resource.config.FreeAttributes",
+      "defaultValue": "slkSecretKey.store"
+    },
+    {
+      "name": "free.attributes.key-store-alias",
+      "type": "java.lang.String",
+      "sourceType": "slktop.auth.resource.config.FreeAttributes",
+      "defaultValue": "slkSecretKeyStore"
+    },
+    {
+      "name": "free.attributes.key-store-password",
+      "type": "java.lang.String",
+      "sourceType": "slktop.auth.resource.config.FreeAttributes",
+      "defaultValue": "slkroot"
+    },
+    {
+      "name": "free.attributes.secret-key-password",
+      "type": "java.lang.String",
+      "sourceType": "slktop.auth.resource.config.FreeAttributes",
+      "defaultValue": "slkroot"
+    }
+  ],
+  "hints": []
+}

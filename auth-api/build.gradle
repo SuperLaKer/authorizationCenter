@@ -1,0 +1,14 @@
+plugins {
+    id 'java'
+}
+
+group 'slktop.auth'
+version 'v1'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}

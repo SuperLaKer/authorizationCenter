@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Configuration;
  */
 @Data
 @Configuration
-@ConfigurationProperties(prefix="free.attributes")
+@ConfigurationProperties(prefix = "free.attributes")
 public class FreeAttributes {
 
     Boolean jwtEnable = true;

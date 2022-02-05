@@ -11,7 +11,6 @@ import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.client.ClientHttpResponse;
-import org.springframework.stereotype.Service;
 import org.springframework.util.Base64Utils;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
@@ -24,7 +23,6 @@ import slktop.auth.doamin.ucenter.response.AuthCode;
 
 import java.io.IOException;
 import java.net.URI;
-import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
@@ -32,7 +30,7 @@ import java.util.concurrent.TimeUnit;
  * @author Administrator
  * @version 1.0
  **/
-@Service
+
 public class AuthService {
 
     @Value("${auth.tokenValiditySeconds}")

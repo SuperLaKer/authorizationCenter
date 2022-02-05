@@ -6,26 +6,23 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@RequestMapping("/resource")
 public class ResourceController {
 
-    @GetMapping("/sayHi1")
+    @GetMapping("/public")
     public String sayHi1(){
         return "hi1..";
     }
 
+    @GetMapping("/admin")
     @PreAuthorize("hasRole('ADMIN')")
-    @GetMapping("/sayHi2")
     public String sayHi2(){
         return "hi2..";
     }
 
-    @GetMapping("/sayHi3")
+    @GetMapping("/normal")
+    @PreAuthorize("hasRole('NORMAL')")
     public String sayHi3(){
         return "hi3..";
-    }
-
-    @GetMapping("/sayHi4")
-    public String sayHi4(){
-        return "hi4..";
     }
 }

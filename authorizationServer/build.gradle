@@ -13,8 +13,9 @@ repositories {
 dependencies {
     // 项目基础依赖
     implementation 'org.springframework.boot:spring-boot-starter-web'
-    implementation 'org.springframework.boot:spring-boot-starter-security'
     implementation('org.springframework.cloud:spring-cloud-starter-oauth2')
+    implementation 'com.auth0.android:jwtdecode:2.0.1'
+    // implementation 'org.springframework.boot:spring-boot-starter-security'
     // implementation "org.springframework.security.oauth.boot:spring-security-oauth2-autoconfigure"
     annotationProcessor "org.springframework.boot:spring-boot-configuration-processor"
 
@@ -31,8 +32,8 @@ dependencies {
 
     // 扩展starter
     implementation 'org.springframework.boot:spring-boot-starter-data-redis'
-    implementation 'com.alibaba.cloud:spring-cloud-starter-alibaba-nacos-discovery'
-    implementation 'com.alibaba.cloud:spring-cloud-starter-alibaba-nacos-config'
+    // implementation 'com.alibaba.cloud:spring-cloud-starter-alibaba-nacos-discovery'
+    // implementation 'com.alibaba.cloud:spring-cloud-starter-alibaba-nacos-config'
     implementation 'org.springframework.cloud:spring-cloud-starter-openfeign'
     implementation 'org.apache.commons:commons-pool2'
 
@@ -44,11 +45,4 @@ dependencies {
     implementation(project(':auth-utils'))
     // 等domain打包后
     // implementation('slktop.auth:auth-domain:v1')
-
-
-
-}
-
-test {
-    useJUnitPlatform()
 }

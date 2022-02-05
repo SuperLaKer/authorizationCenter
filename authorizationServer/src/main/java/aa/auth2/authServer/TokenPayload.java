@@ -1,4 +1,4 @@
-package aa.auth2.authServer.authBeans;
+package aa.auth2.authServer;
 
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
@@ -12,7 +12,7 @@ import java.util.Map;
 /**
  * 自定义token负载
  */
-public class ConsumerUserAuthenticationConverter extends DefaultUserAuthenticationConverter {
+public class TokenPayload extends DefaultUserAuthenticationConverter {
     @Override
     public Map<String, ?> convertUserAuthentication(Authentication authentication) {
         String username = authentication.getName();

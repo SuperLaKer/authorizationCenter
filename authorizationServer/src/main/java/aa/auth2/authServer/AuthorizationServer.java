@@ -1,20 +1,20 @@
 package aa.auth2.authServer;
 
-import aa.auth2.authServer.authBeans.PasswordEncoders;
+import aa.auth2.authServer.configBeans.FreeAttributes;
 import aa.auth2.authServer.configBeans.OtherBeans;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Import;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.oauth2.config.annotation.web.configuration.EnableAuthorizationServer;
 
 import java.security.KeyPair;
 import java.security.PublicKey;
 
 
 @SpringBootApplication
-@EnableDiscoveryClient
+@EnableAuthorizationServer
 @Import(OtherBeans.class)
 public class AuthorizationServer {
 

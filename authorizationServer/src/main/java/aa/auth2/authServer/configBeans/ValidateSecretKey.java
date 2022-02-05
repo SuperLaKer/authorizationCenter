@@ -1,4 +1,4 @@
-package aa.auth2.authServer;
+package aa.auth2.authServer.configBeans;
 
 import com.alibaba.fastjson.JSON;
 import org.springframework.core.io.ClassPathResource;

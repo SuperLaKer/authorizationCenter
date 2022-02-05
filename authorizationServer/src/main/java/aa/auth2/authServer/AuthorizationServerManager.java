@@ -14,14 +14,14 @@
  * limitations under the License.
  */
 
-package aa.auth2.authServer.authConfig;
+package aa.auth2.authServer;
 
-import aa.auth2.authServer.FreeAttributes;
+import aa.auth2.authServer.authBeans.ApplicationDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.oauth2.config.annotation.configurers.ClientDetailsServiceConfigurer;
 import org.springframework.security.oauth2.config.annotation.web.configuration.AuthorizationServerConfigurerAdapter;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableAuthorizationServer;
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerEndpointsConfigurer;
@@ -29,66 +29,49 @@ import org.springframework.security.oauth2.config.annotation.web.configurers.Aut
 import org.springframework.security.oauth2.provider.token.TokenStore;
 import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenConverter;
 
-import java.security.KeyPair;
 
-/**
- * An instance of Legacy Authorization Server (spring-security-oauth2) that uses a single,
- * not-rotating key and exposes a JWK endpoint.
- * <p>
- * See
- * <a
- * target="_blank"
- * href="https://docs.spring.io/spring-security-oauth2-boot/docs/current-SNAPSHOT/reference/htmlsingle/">
- * Spring Security OAuth Autoconfig's documentation</a> for additional detail
- *
- * @author Josh Cummings
- * @since 5.1
- */
 @Configuration
 @EnableAuthorizationServer
-public class AuthServerConfig extends AuthorizationServerConfigurerAdapter {
+public class AuthorizationServerManager extends AuthorizationServerConfigurerAdapter {
 
-    AuthenticationManager authenticationManager;
-    KeyPair keyPair;
     @Autowired
-    FreeAttributes freeAttributes;
+    private AuthenticationManager authenticationManager;
     @Autowired
-    TokenStore tokenStore;
+    private TokenStore tokenStore;
     @Autowired
-    JwtAccessTokenConverter accessTokenConverter;
+    private JwtAccessTokenConverter accessTokenConverter ;
+    @Autowired
+    private ApplicationDetailsService applicationDetailsService;
 
-
-    public AuthServerConfig(
-            AuthenticationConfiguration authenticationConfiguration,
-            KeyPair keyPair) throws Exception {
-
-        this.authenticationManager = authenticationConfiguration.getAuthenticationManager();
-        this.keyPair = keyPair;
-    }
-
+    /**
+     * 认证服务三大组件：tokenStore、authenticationManager、
+     */
     @Override
     public void configure(AuthorizationServerEndpointsConfigurer endpoints) {
-        // @formatter:off
-        endpoints.authenticationManager(this.authenticationManager)
-                .tokenStore(tokenStore);
-        // .userDetailsService(userDetailsService);  // 用户信息service
-        if (this.freeAttributes.getJwtEnable()) {
-            endpoints.accessTokenConverter(accessTokenConverter);
-        }
-        // @formatter:on
+        endpoints.tokenStore(tokenStore);
+        endpoints.accessTokenConverter(accessTokenConverter);
+        endpoints.authenticationManager(this.authenticationManager);
     }
 
     @Override
+    public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
+        clients.withClientDetails(applicationDetailsService);
+    }
+
+    /**
+     * 校验token需要认证通过，可采用http basic认证，校验clientId核clientSecret
+     * security.checkTokenAccess("isAuthenticated()");
+     */
+    @Override
     public void configure(AuthorizationServerSecurityConfigurer security) throws Exception {
-        // 校验token需要认证通过，可采用http basic认证
-        // security.checkTokenAccess("isAuthenticated()");
+
         security.allowFormAuthenticationForClients()
                 .passwordEncoder(new BCryptPasswordEncoder())
                 .tokenKeyAccess("permitAll()")
-                // 校验令牌
-                // .checkTokenAccess("isAuthenticated()");
                 .checkTokenAccess("permitAll()");
     }
+
+
 }
 
 

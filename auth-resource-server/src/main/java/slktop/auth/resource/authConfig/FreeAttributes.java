@@ -1,4 +1,4 @@
-package aa.auth2.authServer;
+package slktop.auth.resource.authConfig;
 
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
@@ -13,7 +13,6 @@ import org.springframework.context.annotation.Configuration;
 public class FreeAttributes {
 
     Boolean jwtEnable = true;
-
     String KeyStore = "slkSecretKey.store";
     String KeyStoreAlias = "slkSecretKeyStore";
     String KeyStorePassword = "slkroot";

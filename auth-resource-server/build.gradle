@@ -10,7 +10,11 @@ repositories {
 }
 
 dependencies {
+    implementation 'aa.my:slkenv:v1'
+    implementation 'com.nimbusds:nimbus-jose-jwt:9.18'
+    implementation 'org.springframework.cloud:spring-cloud-starter-oauth2'
+    implementation 'org.springframework.boot:spring-boot-starter-oauth2-resource-server'
+    implementation "org.springframework.boot:spring-boot-configuration-processor"
+    implementation "org.springframework.boot:spring-boot-starter-web"
     annotationProcessor "org.springframework.boot:spring-boot-configuration-processor"
-    implementation 'com.nimbusds:nimbus-jose-jwt:9.4'
-    compile 'org.springframework.cloud:spring-cloud-starter-oauth2'
 }

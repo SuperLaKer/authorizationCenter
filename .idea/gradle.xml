@@ -6,15 +6,21 @@
       <GradleProjectSettings>
         <option name="delegatedBuild" value="false" />
         <option name="testRunner" value="GRADLE" />
-        <option name="distributionType" value="LOCAL" />
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="gradleHome" value="D:/env/gradle-6.7" />
         <option name="gradleJvm" value="1.8" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/auth-api" />
+            <option value="$PROJECT_DIR$/auth-common" />
+            <option value="$PROJECT_DIR$/auth-domain" />
+            <option value="$PROJECT_DIR$/auth-gateway" />
+            <option value="$PROJECT_DIR$/auth-resource-server" />
+            <option value="$PROJECT_DIR$/auth-utils" />
             <option value="$PROJECT_DIR$/authorizationServer" />
             <option value="$PROJECT_DIR$/buildSrc" />
+            <option value="$PROJECT_DIR$/official-authorization" />
             <option value="$PROJECT_DIR$/resourceServer" />
             <option value="$PROJECT_DIR$/resourceServerJwe" />
             <option value="$PROJECT_DIR$/resourceServerStatic" />

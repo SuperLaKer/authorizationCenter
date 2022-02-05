@@ -1,4 +1,4 @@
-package slktop.auth.resource.config;
+package aa.auth2.authServer.configBeans;
 
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;

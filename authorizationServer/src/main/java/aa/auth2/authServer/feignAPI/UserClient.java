@@ -1,15 +1,12 @@
 package aa.auth2.authServer.feignAPI;
 
 
-import com.netflix.loadbalancer.IRule;
-import com.netflix.loadbalancer.RoundRobinRule;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import slktop.auth.common.client.XcServiceList;
-import slktop.auth.doamin.ucenter.XcUser;
 import slktop.auth.doamin.ucenter.ext.XcUserExt;
 
 /**
@@ -44,8 +41,8 @@ class FeignAPIConfiguration {
     }
 
     // 可以配置多个
-    @Bean
-    public IRule roundRobinRule() {
-        return new RoundRobinRule();
-    }
+//    @Bean
+//    public IRule roundRobinRule() {
+//        return new RoundRobinRule();
+//    }
 }

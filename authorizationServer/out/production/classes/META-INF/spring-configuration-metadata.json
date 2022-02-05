@@ -2,40 +2,35 @@
   "groups": [
     {
       "name": "free.attributes",
-      "type": "aa.auth2.authServer.FreeAttributes",
-      "sourceType": "aa.auth2.authServer.FreeAttributes"
+      "type": "aa.auth2.authServer.configBeans.FreeAttributes",
+      "sourceType": "aa.auth2.authServer.configBeans.FreeAttributes"
     }
   ],
   "properties": [
     {
       "name": "free.attributes.jwt-enable",
       "type": "java.lang.Boolean",
-      "sourceType": "aa.auth2.authServer.FreeAttributes",
-      "defaultValue": true
+      "sourceType": "aa.auth2.authServer.configBeans.FreeAttributes"
     },
     {
       "name": "free.attributes.key-store",
       "type": "java.lang.String",
-      "sourceType": "aa.auth2.authServer.FreeAttributes",
-      "defaultValue": "slkSecretKey.store"
+      "sourceType": "aa.auth2.authServer.configBeans.FreeAttributes"
     },
     {
       "name": "free.attributes.key-store-alias",
       "type": "java.lang.String",
-      "sourceType": "aa.auth2.authServer.FreeAttributes",
-      "defaultValue": "slkSecretKeyStore"
+      "sourceType": "aa.auth2.authServer.configBeans.FreeAttributes"
     },
     {
       "name": "free.attributes.key-store-password",
       "type": "java.lang.String",
-      "sourceType": "aa.auth2.authServer.FreeAttributes",
-      "defaultValue": "slkroot"
+      "sourceType": "aa.auth2.authServer.configBeans.FreeAttributes"
     },
     {
       "name": "free.attributes.secret-key-password",
       "type": "java.lang.String",
-      "sourceType": "aa.auth2.authServer.FreeAttributes",
-      "defaultValue": "slkroot"
+      "sourceType": "aa.auth2.authServer.configBeans.FreeAttributes"
     }
   ],
   "hints": []

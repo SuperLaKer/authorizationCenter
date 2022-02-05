@@ -1,27 +1,29 @@
-package slktop.auth.resource.config;
+package aa.auth2.authServer.authBeans;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import aa.auth2.authServer.configBeans.FreeAttributes;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.oauth2.provider.token.store.KeyStoreKeyFactory;
 
 import java.security.KeyPair;
 
-
-/**
- * An Authorization Server will more typically have a key rotation strategy, and the keys will not
- * be hard-coded into the application code.
- *
- * For simplicity, though, this sample doesn't demonstrate key rotation.
- */
 @Configuration
-public class KeyPairs {
+public class PasswordManagerBeans {
 
-    @Autowired
-    FreeAttributes freeAttributes;
+    final FreeAttributes freeAttributes;
+    public PasswordManagerBeans(FreeAttributes freeAttributes) {
+        this.freeAttributes = freeAttributes;
+    }
+
+    @Bean
+    PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
+    }
 
     @Bean
     @Primary

@@ -6,13 +6,21 @@
       <profile name="Gradle Imported" enabled="true">
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="false">
-          <entry name="$GRADLE_USER_HOME$/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.12/48e4e5d60309ebd833bc528dcf77668eab3cd72c/lombok-1.18.12.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-configuration-processor/2.3.12.RELEASE/36c6cbb35ca07dc8810e913edfe045d8f89a303d/spring-boot-configuration-processor-2.3.12.RELEASE.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.20/18bcea7d5df4d49227b4a0743a536208ce4825bb/lombok-1.18.20.jar" />
         </processorPath>
+        <module name="authorizationCenter.auth-gateway.main" />
         <module name="authorizationCenter.resourceServerJwe.main" />
+        <module name="authorizationCenter.auth-utils.main" />
+        <module name="authorizationCenter.auth-domain.main" />
+        <module name="authorizationCenter.auth-resource-server.main" />
         <module name="authorizationCenter.authorizationServer.main" />
         <module name="authorizationCenter.resourceServer.main" />
-        <module name="authorizationCenter.resourceServerStatic.main" />
         <module name="authorizationCenter.main" />
+        <module name="authorizationCenter.auth-api.main" />
+        <module name="authorizationCenter.official-authorization.main" />
+        <module name="authorizationCenter.auth-common.main" />
+        <module name="authorizationCenter.resourceServerStatic.main" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8" />

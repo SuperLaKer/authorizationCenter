@@ -14,6 +14,7 @@ dependencies {
 
     implementation('io.springfox:springfox-swagger2:2.6.1')
     implementation('io.springfox:springfox-swagger-ui:2.6.1')
+    implementation 'com.auth0.android:jwtdecode:2.0.1'
     testCompile group: 'junit', name: 'junit', version: '4.12'
     compile 'org.hibernate:hibernate-entitymanager:5.4.31.Final'
     compile 'com.google.guava:guava:29.0-jre'

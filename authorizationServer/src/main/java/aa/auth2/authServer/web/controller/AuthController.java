@@ -7,8 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 import slktop.auth.common.exception.ExceptionCast;
@@ -29,7 +27,7 @@ import java.util.Map;
  * @author Administrator
  * @version 1.0
  **/
-@RestController
+
 //public class AuthController implements AuthControllerApi {
 public class AuthController {
 
@@ -116,7 +114,7 @@ public class AuthController {
     private String getTokenFormCookie() {
         HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
         Map<String, String> map = CookieUtil.readCookie(request, "uid");
-        if (map != null && map.get("uid") != null) {
+        if (map.get("uid") != null) {
             String uid = map.get("uid");
             return uid;
         }
